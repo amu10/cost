@@ -6,7 +6,7 @@ include 'easyuihead.php';
 <table id="dg" title="消费信息" class="easyui-datagrid" style="width:800px;height:600px margin: 4px auto auto"
 		url="costmanger.php?action=allcost"
 		toolbar="#toolbar"
-		rownumbers="true" fitColumns="true" singleSelect="true" >
+		rownumbers="true" fitColumns="true" singleSelect="true"   >
 	<thead>
 		<tr>
 			<div field="id" style="display: none;"></div>
@@ -17,6 +17,9 @@ include 'easyuihead.php';
 		</tr>
 	</thead>
 </table>
+<div class="easyui-pagination" style="border:1px solid #ddd;" data-options="total:114,
+			layout:['list','sep','first','prev','links','next','last','sep','refresh']">
+		</div>
 <div id="toolbar">
 	<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newUser()">添加消费</a>
 	<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editdata()">编辑消费</a>
