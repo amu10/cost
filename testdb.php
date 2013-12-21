@@ -1,4 +1,5 @@
 <?php 
-	require 'util/Utils.php';
-	echo guid();
+	require 'db/TxtDb.php';
+	
+	print_r(select);
 ?>

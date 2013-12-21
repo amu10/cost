@@ -10,6 +10,7 @@ function  getdb()
 {
 	$db = new txtSQL ("data");
 	$db->connect ( "root", "" );
+	return $db;
 }
 function selectAll()
 {
