@@ -28,6 +28,37 @@ function selectAll()
 	return $data;
 }
 
+function   selectcount()
+{	global $db;
+	$count = $db->table_count('cost', 'money');
+	return $count;
+}
+
+
+function selectwhere($where ,$limit)
+{
+	global $db;
+	$db->selectdb( "money" );
+	$data = array();
+	$res = $db->select ( array (
+			'table' => 'cost',
+			'where' => $where,
+			'limit' =>$limit
+	) );
+	for($i=0;$i<count($res);$i++)
+	{
+	array_push($data, array("money"=>$res[$i]["money"],
+	"cost_time"=>date('Y-m-d H:i:s',$res[$i]["cost_time"]),
+			"post_time"=>date('Y-m-d H:i:s',$res[$i]["post_time"]),
+					"reason"=>$res[$i]["reason"],
+					"id"=>$res[$i]["id"]
+							)
+							);
+	}
+	return $data;
+}
+
+
 function saveData($data)
 {
 	global $db;
