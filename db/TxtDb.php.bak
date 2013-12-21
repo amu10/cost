@@ -2,7 +2,7 @@
 error_reporting(E_ALL^E_NOTICE); 
 function __autoload($classname) {
 	$filename = "txtsql/" . $classname . ".class.php";
-	include($filename);
+	include_once ($filename);
 }
 $db = new txtSQL ("data");
 $db->connect ( "root", "" );
