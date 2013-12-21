@@ -1,6 +1,10 @@
 $(function(){
 	$("#savedata").click(function(){
 		var  time = new Date($("input[name='cost_time']").val()).getTime();
+		if(!time){
+			$.messager.alert(' ','请重新设置时间','error');
+			return ;
+		}
 		time = time/1000;
 		var data ={'money':$("select[name='money']").val(),
 				   'cost_time':time,

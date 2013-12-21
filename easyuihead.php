@@ -3,4 +3,8 @@
 <script type="text/javascript" src="lib/easyui/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="lib/easyui/jquery.min.js"></script>
 <script type="text/javascript" src="lib/easyui/jquery.easyui.min.js"></script>
-<?php error_reporting(E_ALL^E_NOTICE); ?>
+<?php 
+
+error_reporting(E_ALL^E_NOTICE); 
+include_once 'util/Utils.php';
+?>
