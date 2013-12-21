@@ -3,7 +3,7 @@ $(function(){
 		var  time = new Date($("input[name='cost_time']").val()).getTime();
 		var data ={'money':$("select[name='money']").val(),
 				   'cost_time':time,
-				   'reason':$("input[name='reason']").val()
+				   'reason':$("textarea[name='reason']").val()
 				 };
 		console.log(data.money+" "+data.cost_time+"  "+data.reason);
 		$.post(
@@ -12,9 +12,10 @@ $(function(){
 				function(data){
 					if(data>0)
 					{
-						alert('success');
+						$.messager.alert('  ','数据保存成功','info');
+						
 					}else{
-						alert('faild');
+						$.messager.alert(' ','保存失败','error');
 					}
 					
 				},
@@ -22,3 +23,4 @@ $(function(){
 		);
 	});
 })();
+

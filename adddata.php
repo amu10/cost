@@ -48,18 +48,16 @@
 					<textarea class="form-control" rows="3" name="reason" placeholder="消费原因" ></textarea>
 				</div>
 			</div>
-			<div class="form-group input-group-sm">
-				<div class="col-sm-1 col-sm-offset-2">
-					<button  class="btn btn-primary btn-sm" id="savedata">保存数据</button>
-				</div>
-				<div class="col-sm-1 col-sm-offset-1">
-					<button type="reset" class="btn btn-default btn-sm">取消</button>
-				</div>
+			<div class=" ">
+					<div class="col-sm-1 col-sm-offset-2">
+						<button type="button" class="btn btn-primary btn-sm" id="savedata">保存数据</button>
+					</div>
+					<div class="col-sm-1 col-sm-offset-1">
+						<button type="reset" class="btn btn-default btn-sm">取消</button>
+					</div>
 			</div>
-
 		</form>
 		</div>
 	</div>
-
 </body>
 </html>
