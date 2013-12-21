@@ -4,12 +4,16 @@ function __autoload($classname) {
 	$filename = "txtsql/" . $classname . ".class.php";
 	include($filename);
 }
-$db = new txtSQL ("data");
-$db->connect ( "root", "" );
 
+
+function  getdb()
+{
+	$db = new txtSQL ("data");
+	$db->connect ( "root", "" );
+}
 function selectAll()
 {
-	global $db;
+	$db = getdb();
 	$db->selectdb( "money" );
 	$data = array();
 	$res = $db->select ( array (
@@ -29,7 +33,8 @@ function selectAll()
 }
 
 function   selectcount()
-{	global $db;
+{	
+	$db = getdb();
 	$count = $db->table_count('cost', 'money');
 	return $count;
 }
@@ -37,7 +42,7 @@ function   selectcount()
 
 function selectwhere($where ,$limit)
 {
-	global $db;
+	$db = getdb();
 	$db->selectdb( "money" );
 	$data = array();
 	$res = $db->select ( array (
@@ -61,7 +66,8 @@ function selectwhere($where ,$limit)
 
 function saveData($data)
 {
-	global $db;
+	
+	$db = getdb();
 	$db->selectdb( "money" );
 	if(!$db->insert(array(
 		'db'=>'money',
@@ -76,7 +82,7 @@ function saveData($data)
 
 function  updateData($data,$where)
 {
-	global $db;
+	$db = getdb();
 	$db->selectdb( "money" );
 	if(!$db->update(array(
 			'db'=>'money',
@@ -92,7 +98,7 @@ function  updateData($data,$where)
 
 function  deleteData($where)
 {
-	global $db;
+	$db = getdb();
 	if(!$db->delete(array(
 			'db'=>'money',
 			'table'=>'cost',
@@ -107,7 +113,7 @@ function  deleteData($where)
 
 function selectAllTime()
 {
-	global $db;
+	$db = getdb();
 	$db->selectdb( "money" );
 	$data = array();
 	$res = $db->select ( array (
