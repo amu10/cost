@@ -53,7 +53,7 @@
 						<button type="button" class="btn btn-primary btn-sm" id="savedata">保存数据</button>
 					</div>
 					<div class="col-sm-1 col-sm-offset-1">
-						<button type="reset" class="btn btn-default btn-sm">取消</button>
+						<button type="reset" class="btn btn-primary btn-sm">取消</button>
 					</div>
 			</div>
 		</form>

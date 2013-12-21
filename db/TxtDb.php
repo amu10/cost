@@ -19,6 +19,7 @@ function selectAll()
 	{	
 		array_push($data, array("money"=>$res[$i]["money"],
 								"cost_time"=>date('Y-m-d H:i:s',$res[$i]["cost_time"]),
+								"post_time"=>date('Y-m-d H:i:s',$res[$i]["post_time"]),
 								"reason"=>$res[$i]["reason"],
 								"id"=>$res[$i]["id"]
 								)
@@ -72,4 +73,21 @@ function  deleteData($where)
 		return 1;
 	}
 }
+
+function selectAllTime()
+{
+	global $db;
+	$db->selectdb( "money" );
+	$data = array();
+	$res = $db->select ( array (
+			'table' => 'cost'
+	) );
+	for($i=0;$i<count($res);$i++)
+	{
+		array_push($data,$res[$i]["cost_time"]);
+	}
+	return $data;
+}
+
+
 ?>

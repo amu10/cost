@@ -12,12 +12,20 @@ if(isset($_GET['action']))
 				$data =array('money'=>$_POST['money'],
 							'cost_time'=>$_POST['cost_time'],
 							'reason'=>$_POST['reason']
-							);
+						);
 				echo saveData($data);
 		}
 	}else if($action=="updatedata")
 	{
 		
+	}else if($action=="deldata")
+	{
+		if(isset($_GET['id']))
+		{
+			$id =$_GET['id'];
+			$data = array('id='.$id);
+			echo deleteData($data);
+		}
 	}
 }
 ?>
